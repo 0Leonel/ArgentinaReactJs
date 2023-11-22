@@ -6,11 +6,8 @@ on:
   push:
     branches:
       - PROD
-    branches-ignore:
-      - main
-      - QA
 jobs:
-  Deploy-PROD:
+  Deploy-Production:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
