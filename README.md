@@ -29,4 +29,4 @@ https://nextui.org/docs/frameworks/vite
 https://www.freecodecamp.org/espanol/news/tutorial-de-react-router-version-6-como-navegar-a-otros-componentes-y-configurar-un-enrutador/
 https://swiperjs.com/element
 https://firebase.google.com/docs/web/setup?hl=es-419
-
+https://vercel.com/guides/how-can-i-use-github-actions-with-vercel
