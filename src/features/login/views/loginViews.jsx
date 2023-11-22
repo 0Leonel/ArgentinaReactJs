@@ -30,6 +30,7 @@ export const LoginViews = () => {
 
   return (
     <div>
+      <h1>Este es el QA aca vamos a probar las cosas antes de subirlo a la produccion</h1>
       <form onSubmit={hanldeSubmit}>
         <label>Email</label>
         <Input
