@@ -6,9 +6,6 @@ on:
   push:
     branches:
       - PROD
-    branches-ignore:
-      - main
-      - QA
 jobs:
   Deploy-PROD:
     runs-on: ubuntu-latest
