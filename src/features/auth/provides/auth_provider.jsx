@@ -17,7 +17,6 @@ const AuthProvider = () => {
             setUsuario(null);
         }
     });
-    console.log(usuario);
   return (
     <div>
         {usuario ? <HomeView users={usuario.email}/> : <LoginViews/>}

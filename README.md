@@ -1,8 +1,10 @@
 # React + Vite
 Trabajo Integrador Final
 Consigna
-Desarrollar en un ecommerce con las siguientes paginas:
+Desarrollar en un ecommerce con las siguientes  paginas:
+
 ● Home: Listado de productos.
+
 ○ Campos de ejemplo nombre, precio, sku, descripción
 ● Detalle de producto:
 ○ Campos de ejemplo: Nombre del producto, descripción, precio, sku
