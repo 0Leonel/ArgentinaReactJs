@@ -27,7 +27,9 @@ const TaskForm = ({onAddTask}) => {
                 value={taskName}
                 onChange={handleInputChange}
                 />
-                <button type='submit'>Agregar</button>
+                <button type='submit'
+                className="bg-yellow-400 text-white font-bold py-1 px-1 rounded"
+                >Agregar</button>
             </form>
         </div>        
     )

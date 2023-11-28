@@ -36,9 +36,9 @@ export const HomeView = (props) => {
 
 
   return (
-    <div>
+    <div className='flex flex-col flex items-center h-screen'>
       <h1>Welcome {props.users}! <button onClick={() => signOut(auth)} className='bg-blue-500 rounded-lg text-white p-1'>Logout</button></h1>
-      <div className='flex flex-1 '>
+      <div >
         <h2>Mis Tareas</h2>
         <TaskList tasks={tasks} onComplete={handleComplete} onDelete={handleDelete}/>
         <TaskForm onAddTask={handleAddTask}/>
