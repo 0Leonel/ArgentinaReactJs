@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useEffect,useState } from 'react';
 import AppSpiner from '../appSpiner/appSpinner';
 import './style.css';
+import AppPortada from './portada';
 const delay = (ms) => new Promise((res) => setTimeout(res, 2000));
 const AppCard = () => {
 const [data, setData] = useState({
@@ -29,9 +30,19 @@ const [data, setData] = useState({
     data6: [],
     loading6: true,
     error6: false,
+
+    data7: [],
+    loading7: true,
+    error7: false,
+
+    data8: [],
+    loading8: true,
+    error8: false,
 });
+
+
 const fetchData = async (url, setDataKey) => {
-    
+
     try {
         // await delay(500);
       const response = await axios.get(url);
@@ -41,7 +52,7 @@ const fetchData = async (url, setDataKey) => {
       setData((prevData) => ({ ...prevData, [`error${setDataKey.charAt(setDataKey.length - 1)}`]: true }));
     }finally{
         setData((prevData) => ({ ...prevData, [`loading${setDataKey.charAt(setDataKey.length - 1)}`]: false }));
-        
+
     }
   };
 useEffect(() => {
@@ -50,15 +61,26 @@ useEffect(() => {
     fetchData('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic', 'data3');
     fetchData('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka', 'data4');
     fetchData('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin', 'data5');
-    fetchData('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita', 'data6');
+    fetchData('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Tequila', 'data6');
+    fetchData('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Whisky', 'data7');
+    fetchData('https://www.thecocktaildb.com/api/json/v1/1/random.php', 'data8');
 }, [])
 
-  return (
-    <div className='w-full grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] pb-20 gap-6 bg-gray-200'>
-        {/* {JSON.stringify(data.data1,null,2)} */}
+  return (<>
+    
+    <div className='w-full place-content-center grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] pb-20 gap-6 bg-gray-200'>
+       <div className='col-span-3'>
+
+        {data.loading8 ? <AppSpiner/> : <AppPortada data={data.data8.drinks}/>}
+        {data.error1 ? <p>Error</p> : null}
+       </div>
+
+        {/* {JSON.stringify(data.data2,null,2)} */}
+
+
         {data.loading1 ? <AppSpiner/> : <Cards data={data.data1.drinks}/>}
         {data.error1 ? <p>Error</p> : null}
-        
+
         {data.loading2 ? <AppSpiner/> : <Cards data={data.data2.drinks}/>}
         {data.error2 ? <p>Error</p> : null}
 
@@ -73,7 +95,11 @@ useEffect(() => {
 
         {data.loading6 ? <AppSpiner/> : <Cards data={data.data6.drinks}/>}
         {data.error6 ? <p>Error</p> : null}
+
+        {data.loading7 ? <AppSpiner/> : <Cards data={data.data7.drinks}/>}
+        {data.error7 ? <p>Error</p> : null}
     </div>
+  </>
   )
 }
 

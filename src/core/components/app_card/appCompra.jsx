@@ -27,7 +27,7 @@ export default function AppCompra(props) {
   
   return (
     <>
-      <Button onPress={openModal1}  className='bg-red-500 rounded-lg p-2 text-white shadow-lg shadow-white'>Comprar</Button>
+      <Button onPress={openModal1}  className='bg-red-500 rounded-lg p-2 text-white shadow-lg shadow-white'>Comprar ${props.price.toString().slice(-2)}</Button>
       <Modal isOpen={isModal1Open} onClose={closeModal1}
       size="2xl" hideCloseButton
       classNames={{
@@ -43,7 +43,7 @@ export default function AppCompra(props) {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader >{props.title}</ModalHeader>
+              <ModalHeader >{props.title} </ModalHeader>
               <ModalBody>
                 <img src={props.imagen} className="object-cover w-full" alt=""/>
                 <p> 
@@ -55,7 +55,7 @@ export default function AppCompra(props) {
                   Cancelar
                 </Button>
                  <AppSend title={props.title} onPress={isModal2Open} onClose={closeModal2} isOpen={isModal1Open}> 
-                  <Button onPress={openModal2}  onClick={()=> {setOpacity(true)}} className='bg-red-500 rounded-lg p-2 text-white shadow-lg shadow-white'  >Confirmar Compra</Button>
+                  <Button onPress={openModal2}  onClick={()=> {setOpacity(true)}} className='bg-red-500 rounded-lg p-2 text-white shadow-lg shadow-white'  > Confirmar Compra </Button>
                  </AppSend>
 
               </ModalFooter>
