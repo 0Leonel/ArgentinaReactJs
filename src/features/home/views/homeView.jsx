@@ -30,7 +30,7 @@ export const HomeView = (props) => {
     prevTasks.filter((task)=> task.id !== taskId));
   }
 
-  const handleAddTassk = (newTask) => {
+  const handleAddTask = (newTask) => {
     setTasks((prevTasks) => [...prevTasks, newTask]);
   }
 
@@ -41,7 +41,7 @@ export const HomeView = (props) => {
       <div className='flex flex-1 '>
         <h2>Mis Tareas</h2>
         <TaskList tasks={tasks} onComplete={handleComplete} onDelete={handleDelete}/>
-        <TaskForm onAddTask={handleAddTassk}/>
+        <TaskForm onAddTask={handleAddTask}/>
       </div>
     
     </div>

@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import TaskItem from './TaskItem';
 
-const TaskList = ({task, onComplete, onDelete}) => {
+const TaskList = ({tasks, onComplete, onDelete}) => {
     return (
         <div>
-            {task.map((task) => (
+            {tasks.map((task) => (
                 <TaskItem 
                 key = {task.id}
                 task = {task}
