@@ -5,14 +5,13 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCdVOePedink2O4Efuzt92wj9pM2OTQrDs",
-  authDomain: "reactargentina-d7c74.firebaseapp.com",
-  projectId: "reactargentina-d7c74",
-  storageBucket: "reactargentina-d7c74.appspot.com",
-  messagingSenderId: "715367381701",
-  appId: "1:715367381701:web:b6eed015a0d5ef12ed4eac"
+  apiKey: import.meta.env.VITE_VERCEL_API_KEY,
+  authDomain: import.meta.env.VITE_VERCEL_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_VERCEL_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_VERCEL_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_VERCEL_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_VERCEL_APP_ID 
 };
-
 // Initialize Firebase
 const appFirebase = initializeApp(firebaseConfig);
 export default appFirebase;
