@@ -9,6 +9,7 @@ import { AppRecordatorio } from '../components/Recordatorio/appRecordatorio'
 import { AppNotas } from '../components/Notas/appNotas'
 import { AppPapelera } from '../components/Papelera/appPapelera'
 import { AppFail } from '../components/404/appFail'
+import { NotasProvider } from '../layout/provider/notas_provider'
 
 export const appRouter = createBrowserRouter([
     {
@@ -25,11 +26,16 @@ export const appRouter = createBrowserRouter([
         },
         {
           path: "/tareas",
-          element: <AppTareas />,
+          element: (<NotasProvider>
+                    <AppTareas />
+                   </NotasProvider>),
         },
         {
           path: "/recordatorio",
-          element: <AppRecordatorio/>
+          element: 
+                  (<NotasProvider>
+                      <AppRecordatorio/>
+                    </NotasProvider>),
         },
         // {
         //   path: "/notas",
@@ -37,7 +43,9 @@ export const appRouter = createBrowserRouter([
         // },
         {
           path: "/papelera",
-          element: <AppPapelera />,
+          element: (<NotasProvider>
+                    <AppPapelera />
+                    </NotasProvider>),
         },
       ]
     },

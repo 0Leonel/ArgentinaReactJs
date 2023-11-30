@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import TaskForm from './TaskForm';
 import TaskList from './TaskList';
+import { useNotas } from '../../layout/hook/useNotas';
 
 export const AppTareas = () => {
-  const [tasks, setTasks] = useState([]);
-  
-  useEffect(()=>{
-    console.log('Lista de tareas actualizada:', tasks);
-
-    localStorage.setItem('task', JSON.stringify(tasks));
-  }, [tasks]);
+  const {tasks, setTasks, fecha} = useNotas();  
 
   const handleComplete = (taskId) => {
     setTasks((prevTasks) => 
@@ -24,17 +19,37 @@ export const AppTareas = () => {
     prevTasks.filter((task)=> task.id !== taskId));
   }
 
+  
+  const handleRecordatorio = (taskId) => {
+    setTasks((prevTasks) => 
+      prevTasks.map((task) =>
+        task.id === taskId ? { ...task, recordatorio: fecha } : task
+      )
+    );
+  };
+  
+  
   const handleAddTask = (newTask) => {
+    
     setTasks((prevTasks) => [...prevTasks, newTask]);
   }
 
   return (
-    <div className='flex flex-col text-[#CFCFCF] items-center h-screen'>
+    <div className='w-full'>
     <h1>Tareas</h1>
     <div>
       <h2>Mis Tareas</h2>
+      <div className='w-full flex justify-center  items-center' >
       <TaskForm onAddTask={handleAddTask}/>
-      <TaskList tasks={tasks} onComplete={handleComplete} onDelete={handleDelete}/>
+      </div>
+      <div className=''>
+      <TaskList 
+      tasks={tasks} 
+      onComplete={handleComplete} 
+      onRecordatorio={handleRecordatorio}
+      onDelete={handleDelete}
+      />
+      </div>
     </div>
   
   </div>

@@ -1,16 +1,24 @@
 /* eslint-disable react/prop-types */
+import { useNotas } from '../../layout/hook/useNotas';
 import TaskItem from './TaskItem';
 
-const TaskList = ({tasks, onComplete, onDelete}) => {
+const TaskList = ({ onComplete, onDelete, onRecordatorio}) => {
+    const {tasks} = useNotas();
+    
     return (
-        <div>
+<div className='grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4'>
             {tasks.map((task) => (
+                <div
+                    key = {task.id}
+                    className='p-2 '
+                >
                 <TaskItem 
-                key = {task.id}
                 task = {task}
                 onComplete = {onComplete}
                 onDelete = {onDelete}
+                onRecordatorio = {onRecordatorio}
                 />
+                </div>
             ))}
         </div>
     )
