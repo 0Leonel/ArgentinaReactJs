@@ -1,10 +1,14 @@
-import  AuthProvider  from './features/auth/provides/auth_provider'
-function App() {
+import { RouterProvider } from "react-router-dom"
+import { RootProvider } from "./core/provides/root_provider"
+import { appRouter } from "./core/routes/appRouter"	
+const  App =()=> {
+  // localStorage.clear()
   return (
-  <>
-
-    <AuthProvider/>
-  </>
+      <>
+      <RootProvider>
+        <RouterProvider router={appRouter} />
+      </RootProvider>
+      </>
   )
 }
 

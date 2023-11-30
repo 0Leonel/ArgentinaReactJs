@@ -1,28 +1,35 @@
-import React, { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { AuthContext } from '../context/auth_context';
 import appFirebase from '../../../credenciales';
 import{getAuth,onAuthStateChanged} from 'firebase/auth';
-import { LoginViews } from '../../login/views/loginViews';
-import { HomeView } from '../../home/views/homeView';
 const auth = getAuth(appFirebase);
 
-const AuthProvider = () => {
 
+export const AuthProvider = ({ children }) => {
     const[usuario,setUsuario] = useState(null);
 
-    onAuthStateChanged(auth, (user) => {
-        if (user){
+
+useEffect(() => {
+     onAuthStateChanged(auth, (user) => {
+        if (user) {
             setUsuario(user);
-        }
-        else{
+        } else {
             setUsuario(null);
         }
     });
-    console.log(usuario);
-  return (
-    <div>
-        {usuario ? <HomeView users={usuario.email}/> : <LoginViews/>}
-    </div>
-  )
-}
+   
+}, []);
+   
+
+return (
+      <AuthContext.Provider
+        value={{
+          usuario
+        }}
+      >
+        {children}
+      </AuthContext.Provider>
+    );
+  };
 
 export default AuthProvider;
