@@ -17,7 +17,7 @@ const TaskItem = ({ task, onComplete, onDelete}) => {
 
     return (
         <div>
-            <span>{task.name} </span>
+            <span className='inline-block w-2/5 p-2'>{task.name} </span>
             <button onClick={handleComplete}
             className="bg-green-500 text-white font-bold py-1 px-1 rounded"
             >

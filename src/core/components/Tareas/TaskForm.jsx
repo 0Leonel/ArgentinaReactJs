@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import {useState} from 'react';
 
+
 const TaskForm = ({onAddTask}) => {
     
     const [taskName, setTaskName] = useState('');
@@ -24,11 +25,13 @@ const TaskForm = ({onAddTask}) => {
                 <input
                 type='text'
                 placeholder='Nueva tarea'
+                className='mr-2 p-2 border rounded text-black'
                 value={taskName}
                 onChange={handleInputChange}
                 />
+
                 <button type='submit'
-                className="bg-yellow-400 text-white font-bold py-1 px-1 rounded"
+                className="bg-yellow-400 text-white font-bold p-2 rounded"
                 >Agregar</button>
             </form>
         </div>        

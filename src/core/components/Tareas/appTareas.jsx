@@ -1,32 +1,41 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react'
 import TaskForm from './TaskForm';
 import TaskList from './TaskList';
 
 export const AppTareas = () => {
   const [tasks, setTasks] = useState([]);
-  
-  useEffect(()=>{
-    console.log('Lista de tareas actualizada:', tasks);
 
-    localStorage.setItem('task', JSON.stringify(tasks));
-  }, [tasks]);
+  useEffect(() => {
+    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    setTasks(storedTasks);
+  }, []);
+
 
   const handleComplete = (taskId) => {
-    setTasks((prevTasks) => 
-      prevTasks.map((task)=>
-        task.id === taskId ? {...task, completed: !task.completed} : task
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === taskId ? { ...task, completed: !task.completed } : task
       )
     );
-  }
+  };
 
   const handleDelete = (taskId) => {
-    setTasks((prevTasks) => 
-    prevTasks.filter((task)=> task.id !== taskId));
-  }
+    setTasks((prevTasks) =>
+      prevTasks.filter((task) => task.id !== taskId)
+    );
+  
+    const updatedTasks = tasks.filter((task) => task.id !== taskId);
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+  };
 
   const handleAddTask = (newTask) => {
-    setTasks((prevTasks) => [...prevTasks, newTask]);
-  }
+    setTasks((prevTasks) => {
+      const updatedTasks = [...prevTasks, newTask];
+      localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+      return updatedTasks;
+    });
+  };
 
   return (
     <div className='flex flex-col text-[#CFCFCF] items-center h-screen'>
