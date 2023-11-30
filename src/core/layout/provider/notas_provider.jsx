@@ -6,11 +6,21 @@ export const NotasProvider = ({children}) => {
     
     const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
     const [tasks, setTasks] = useState(storedTasks);
-    
+
     const handleDelete = (taskId) => {
-      setTasks((prevTasks) => 
-      prevTasks.filter((task)=> task.id !== taskId));
-    }
+      const taskToDelete = tasks.find((task) => task.id === taskId);
+  
+      if (!taskToDelete.completed) {
+        setTasks((prevTasks) =>
+          prevTasks.map((task) =>
+            task.id === taskId ? { ...task, msg: 'Completa la tarea antes de borrarla' } : task
+          )
+        );
+        return;
+      } 
+  
+      setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
+    };
 
     const handleComplete = (taskId) => {
       setTasks((prevTasks) => 

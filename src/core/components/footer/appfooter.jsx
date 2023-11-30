@@ -114,14 +114,14 @@ const Appfooter = () => {
       </div> */}
     </div>
   </div>
-  <div className="px-4 py-12 mx-auto bg-[#3C3C3C] bg-opacity-10 rounded max-w-7xl sm:px-6 lg:px-16">
+  <div className="px-4 py-12 mx-auto bg-[#3C3C3C] bg-opacity-10 rounded-lg max-w-7xl sm:px-6 lg:px-16">
     <div className="flex flex-wrap items-baseline">
       <span className="mt-2 text-sm font-light text-gray-500">
         Copyright © 2023
         <a href="https://github.com/0Leonel/" className="mx-2 text-wickedblue hover:text-gray-100" rel="noopener noreferrer">Leonel Andias</a>
         <a href="https://github.com/MauroTriaca" className="mx-2 text-wickedblue hover:text-gray-100" rel="noopener noreferrer">Mauro Triaca</a>
-        <a href="https://github.com/harap4" className="mx-2 text-wickedblue hover:text-gray-100" rel="noopener noreferrer">Horacio Arapa</a>
-        <a href="https://github.com/BjPh" className="mx-2 text-wickedblue hover:text-gray-100" rel="noopener noreferrer">Brian Jesus Perez Heim</a>
+        {/* <a href="https://github.com/harap4" className="mx-2 text-wickedblue hover:text-gray-100" rel="noopener noreferrer">Horacio Arapa</a> */}
+        {/* <a href="https://github.com/BjPh" className="mx-2 text-wickedblue hover:text-gray-100" rel="noopener noreferrer">Brian Jesus Perez Heim</a> */}
       
       </span>
     </div>

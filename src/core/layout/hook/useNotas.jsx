@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { NotasContext } from '../context/notas_context';
 
 export const useNotas = () => {
-    const {tasks, setTasks, fecha, setFecha, handleDelete,handleComplete} = useContext(NotasContext);
+    const {tasks, setTasks, fecha, setFecha, handleDelete,handleComplete,handleRecordatorio} = useContext(NotasContext);
 
   return {
       tasks,
@@ -11,5 +11,7 @@ export const useNotas = () => {
       setFecha,
       handleDelete,
       handleComplete,
+      handleRecordatorio,
+     
   }
 }

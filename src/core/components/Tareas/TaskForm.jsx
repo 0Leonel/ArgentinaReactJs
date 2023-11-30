@@ -13,7 +13,7 @@ const TaskForm = ({onAddTask}) => {
         e.preventDefault();
 
         if(taskName.trim() !== ''){
-            onAddTask({id:new Date().getTime(), name: taskName, completed: false , recordatorio: {}});
+            onAddTask({id:new Date().getTime(), name: taskName, completed: false ,msg: '', recordatorio: {}});
             setTaskName('');
         }
     }
@@ -30,8 +30,7 @@ const TaskForm = ({onAddTask}) => {
                 className='w-full py-1 px-2 rounded'
                 />
                 <Button type='submit'
-                color={taskName ? 'success' : 'warning'}
-                className=" text-white font-bold py-1 px-1 rounded ml-2 text-lg">
+                className={taskName ? "bg-[#3A7C4D] text-[#212121] font-bold py-1 px-1 rounded ml-2 text-lg": "bg-[#FDB316] text-[#212121] font-bold py-1 px-1 rounded ml-2 text-lg"}>
                 Añadir
                 </Button>
             </form>

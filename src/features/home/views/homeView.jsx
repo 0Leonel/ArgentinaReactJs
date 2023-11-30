@@ -4,10 +4,14 @@ import { useAuth } from '../../auth/hook/use_auth';
 export const HomeView = () => {
   const {usuario} = useAuth();
 
-  return (
-    <div className='pt-10 flex text-center justify-center items-center flex-wrap text-[#CFCFCF]'>
-    <h1 className='basis-full text-2xl lg:text-5xl py-2 font-bold text-[#543232]'>BIENVENIDO <span className='text-[#CFCFCF] text-md lg:text-lg font-normal'>{usuario?.email}</span></h1>
-    <div className='max-w-md text-justify lg:max-w-xl'>
+  return (<>
+    
+    <div className='pt-10 flex text-center justify-center items-center flex-wrap text-[#CFCFCF] '>
+      <div className=' shadow-[#FDB316]  p-10 shadow'>
+
+        <h1 className='basis-full text-4xl lg:text-6xl lg:text-start py-2 font-bold text-[#FDB316]'>BIENVENIDO <span className='text-[#848181] text-md lg:text-lg font-normal'>{usuario?.email.slice(0, -10)}</span></h1>
+      
+    <div className='m-6 lg:m-0 max-w-md text-justify lg:max-w-xl'>
       <p className='py-2 text-lg'>
         Para nuestro Trabajo Integrador Final, hemos desarrollado una aplicación web en React JS para gestionar listas de tareas. La aplicación utiliza componentes funcionales, el hook useState para el manejo del estado, el hook useEffect para realizar efectos secundarios, y eventos para interactuar con el usuario.
       </p>
@@ -33,7 +37,9 @@ export const HomeView = () => {
         Con esta estructura, hemos creado una aplicación eficiente y fácil de usar para la gestión de tareas en React JS.
       </p>
       </div>
+      </div>
     </div>
   </div>
+  </>
     );
 }

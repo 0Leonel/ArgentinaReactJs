@@ -6,10 +6,10 @@ import PrivateRoute from '../../features/auth/components/private_route'
 import { Layout } from '../layout/private_layout/Layout'
 import { AppTareas } from '../components/Tareas/appTareas'
 import { AppRecordatorio } from '../components/Recordatorio/appRecordatorio'
-import { AppNotas } from '../components/Notas/appNotas'
-import { AppPapelera } from '../components/Papelera/appPapelera'
 import { AppFail } from '../components/404/appFail'
 import { NotasProvider } from '../layout/provider/notas_provider'
+// import { AppNotas } from '../components/Notas/appNotas'
+// import { AppPapelera } from '../components/Papelera/appPapelera'
 
 export const appRouter = createBrowserRouter([
     {
@@ -41,12 +41,12 @@ export const appRouter = createBrowserRouter([
         //   path: "/notas",
         //   element: <AppNotas />,
         // },
-        {
-          path: "/papelera",
-          element: (<NotasProvider>
-                    <AppPapelera />
-                    </NotasProvider>),
-        },
+        // {
+        //   path: "/papelera",
+        //   element: (<NotasProvider>
+        //             <AppPapelera />
+        //             </NotasProvider>),
+        // },
       ]
     },
     {

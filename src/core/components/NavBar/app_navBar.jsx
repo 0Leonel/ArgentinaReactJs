@@ -4,20 +4,18 @@ import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link as NextLink, Button
 import logoIcon from "../../../assets/logo.jpg";
 
 import { Link } from "react-router-dom";
-import { useAuth } from "../../../features/auth/hook/use_auth.jsx";
 import appFirebase from '../../../credenciales';
 import { getAuth, signOut } from "firebase/auth";
 const auth = getAuth(appFirebase);
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const {usuario} = useAuth();
 
   const menuItems = [
     {id:2, name:"Tareas", to:"/tareas", current:false},
     // {id:1, name:"Notas", to:"/notas", current:true},
-    {id:3, name:"Recordatorio", to:"/recordatorio", current:false},
-    {id:4, name:"Papelera", to:"/papelera", current:false},
+    {id:3, name:"Recordatorios", to:"/recordatorio", current:false},
+    // {id:4, name:"Papelera", to:"/papelera", current:false},
     // {id:5, name:"Cerrar sesión", to:"#", current:true},
   ];
 {logoIcon}
@@ -44,7 +42,7 @@ export default function App() {
               className="w-full p-2 focus:text-[#D0D0D0] focus:shadow-[#46A9E2] rounded-lg text-[#212121] focus:shadow hover:text-[#D0D0D0]"
               size="lg"
             >
-                <Link to={item.to}>
+                <Link to={item.to} className="font-semibold">
                  {item.name}
                 </Link>
             </NextLink>

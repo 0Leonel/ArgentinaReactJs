@@ -7,7 +7,6 @@ const auth = getAuth(appFirebase);
 
 export const LoginViews = () => {
   const [login, setlogin] = useState(false)
-  const {usuario} = useAuth();
   const [value, setValue] = useState({
     email: "",
     password: "",
@@ -34,8 +33,7 @@ export const LoginViews = () => {
     }
     }}
 
-console.log(error.email)
-  return (
+    return (
     <div className='flex flex-col justify-center items-center h-[100vh]  bg-opacity-10 bg-gradient-to-r from-[#1F1F1F] via-[#743636] to-[#1F1F1F]'>
       <h1 className='text-3xl font-bold text-white p-2'>{login ? "Register" : "Login"}</h1>
       <div className='w-full max-w-xs   p-4 rounded-lg shadow-md shadow-black bg-[#1F1F1F] bg-opacity-70'>

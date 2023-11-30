@@ -6,7 +6,7 @@ export const Layout = () => {
   return (
     <>
     <AppNavBar/>
-    <main className='min-h-screen bg-[#1F1F1F]'>
+    <main className='min-h-screen bg-[#1F1F1F] m-0'>
       <Outlet/>
     </main>
     <Appfooter/>
