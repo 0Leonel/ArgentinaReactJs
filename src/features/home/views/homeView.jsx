@@ -7,9 +7,9 @@ export const HomeView = () => {
   return (<>
     
     <div className='pt-10 flex text-center justify-center items-center flex-wrap text-[#CFCFCF] '>
-      <div className=' shadow-[#FDB316]  p-10 shadow'>
+      <div className=' shadow-[#FDB316]  lg:p-10 shadow'>
 
-        <h1 className='basis-full text-4xl lg:text-6xl lg:text-start py-2 font-bold text-[#FDB316]'>BIENVENIDO <span className='text-[#848181] text-md lg:text-lg font-normal'>{usuario?.email.slice(0, -10)}</span></h1>
+        <h1 className='basis-full text-5xl lg:text-6xl text-center lg:text-start py-2 font-bold text-[#FDB316]'>BIENVENIDO <span className='text-[#848181] text-sm lg:text-lg font-normal'>{usuario?.email.slice(0, -10)}</span></h1>
       
     <div className='m-6 lg:m-0 max-w-md text-justify lg:max-w-xl'>
       <p className='py-2 text-lg'>
