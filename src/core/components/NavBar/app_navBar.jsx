@@ -14,8 +14,8 @@ export default function App() {
   const {usuario} = useAuth();
 
   const menuItems = [
-    {id:1, name:"Notas", to:"/notas", current:true},
     {id:2, name:"Tareas", to:"/tareas", current:false},
+    // {id:1, name:"Notas", to:"/notas", current:true},
     {id:3, name:"Recordatorio", to:"/recordatorio", current:false},
     {id:4, name:"Papelera", to:"/papelera", current:false},
     // {id:5, name:"Cerrar sesión", to:"#", current:true},

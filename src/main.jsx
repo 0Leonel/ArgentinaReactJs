@@ -10,7 +10,9 @@ registerSW();
 ReactDOM.createRoot(document.getElementById('root')).render(
   <NextUIProvider>
   <React.StrictMode>
-    <App />
+    <main className="light text-foreground bg-background">
+        <App  />
+    </main>
   </React.StrictMode>
   </NextUIProvider>
 )

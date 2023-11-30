@@ -1,11 +1,10 @@
-import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import { LoginViews } from '../../features/login/views/loginViews'
 import { HomeView } from '../../features/home/views/homeView'
 import PublicRoute from '../../features/auth/components/public_route'
 import PrivateRoute from '../../features/auth/components/private_route'
 import { Layout } from '../layout/private_layout/Layout'
-import { AppTareas } from '../components/Tarea/appTareas'
+import { AppTareas } from '../components/Tareas/appTareas'
 import { AppRecordatorio } from '../components/Recordatorio/appRecordatorio'
 import { AppNotas } from '../components/Notas/appNotas'
 import { AppPapelera } from '../components/Papelera/appPapelera'
@@ -32,10 +31,10 @@ export const appRouter = createBrowserRouter([
           path: "/recordatorio",
           element: <AppRecordatorio/>
         },
-        {
-          path: "/notas",
-          element: <AppNotas />,
-        },
+        // {
+        //   path: "/notas",
+        //   element: <AppNotas />,
+        // },
         {
           path: "/papelera",
           element: <AppPapelera />,

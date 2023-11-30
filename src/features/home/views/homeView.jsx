@@ -1,9 +1,10 @@
+
 import { useAuth } from '../../auth/hook/use_auth';
 
 export const HomeView = () => {
   const {usuario} = useAuth();
 
-  console.log(usuario)
+  console.log(usuario);
   return (
     <div className='pt-10 flex text-center justify-center items-center flex-wrap text-[#CFCFCF]'>
     <h1 className='basis-full text-2xl lg:text-5xl py-2 font-bold text-[#543232]'>BIENVENIDO <span className='text-[#CFCFCF] text-md lg:text-lg font-normal'>{usuario?.email}</span></h1>
